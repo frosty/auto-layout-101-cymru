@@ -8,6 +8,47 @@
 
 import UIKit
 
+class PlacesViewController: UITableViewController {
+  
+  let places = Place.allPlaces()
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+//    tableView.estimatedRowHeight = 70
+//    tableView.rowHeight = UITableViewAutomaticDimension
+  }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if let destinationVC = segue.destinationViewController as? PlacesDetailViewController
+      where segue.identifier == "PlaceDetailSegue" {
+        let place = places[tableView.indexPathForSelectedRow!.row]
+        destinationVC.place = place
+    }
+  }
+  
+  override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    return 1
+  }
+  
+  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return places.count
+  }
+  
+  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCellWithIdentifier("PlaceCell", forIndexPath: indexPath)
+    
+    let place = places[indexPath.row]
+
+    cell.textLabel?.text = place.title
+    cell.detailTextLabel?.text = place.summary
+    cell.imageView?.image = place.image
+    
+    return cell
+  }
+}
+
+
 class PlacesTableViewCell: UITableViewCell {
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var descriptionLabel: UILabel!
@@ -28,42 +69,5 @@ class PlacesTableViewCell: UITableViewCell {
     titleLabel.text = nil
     descriptionLabel.text = nil
     photoView.image = nil
-  }
-}
-
-class PlacesViewController: UITableViewController {
-  
-  let places = Place.allPlaces()
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    tableView.estimatedRowHeight = 70
-    tableView.rowHeight = UITableViewAutomaticDimension
-  }
-  
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if let destinationVC = segue.destinationViewController as? PlacesDetailViewController
-      where segue.identifier == "PlaceDetailSegue" {
-        let place = places[tableView.indexPathForSelectedRow!.row]
-        destinationVC.place = place
-    }
-  }
-  
-  override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return 1
-  }
-  
-  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return places.count
-  }
-  
-  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("PlaceCell", forIndexPath: indexPath) as! PlacesTableViewCell
-    
-    let place = places[indexPath.row]
-    cell.place = place
-    
-    return cell
   }
 }
