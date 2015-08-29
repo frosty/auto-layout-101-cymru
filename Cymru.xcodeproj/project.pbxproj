@@ -9,13 +9,12 @@
 /* Begin PBXBuildFile section */
 		173744211B8FA1CC00DD78D6 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173744201B8FA1CC00DD78D6 /* PlacesViewController.swift */; };
 		1739DAB41B8E6E3700CB6413 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1739DAB31B8E6E3700CB6413 /* MapKit.framework */; };
-		1749C0171B90E1A100E4F31A /* PlaceDefinitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1749C0161B90E1A100E4F31A /* PlaceDefinitionViewController.swift */; };
-		1749C0191B91AD9200E4F31A /* DefinitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1749C0181B91AD9200E4F31A /* DefinitionViewController.swift */; };
+		1749C0171B90E1A100E4F31A /* PlacesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1749C0161B90E1A100E4F31A /* PlacesDetailViewController.swift */; };
+		1749C0191B91AD9200E4F31A /* WordsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1749C0181B91AD9200E4F31A /* WordsDetailViewController.swift */; };
 		1749C01B1B91E87D00E4F31A /* CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1749C01A1B91E87D00E4F31A /* CustomViews.swift */; };
 		1749C01D1B91E8DE00E4F31A /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1749C01C1B91E8DE00E4F31A /* Models.swift */; };
 		175108F71B8E66AB000EB65F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175108F61B8E66AB000EB65F /* AppDelegate.swift */; };
 		175108F91B8E66AB000EB65F /* WordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175108F81B8E66AB000EB65F /* WordsViewController.swift */; };
-		175108FB1B8E66AB000EB65F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175108FA1B8E66AB000EB65F /* MapViewController.swift */; };
 		175108FE1B8E66AB000EB65F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 175108FC1B8E66AB000EB65F /* Main.storyboard */; };
 		175109001B8E66AB000EB65F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 175108FF1B8E66AB000EB65F /* Assets.xcassets */; };
 		175109031B8E66AB000EB65F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 175109011B8E66AB000EB65F /* LaunchScreen.storyboard */; };
@@ -24,14 +23,13 @@
 /* Begin PBXFileReference section */
 		173744201B8FA1CC00DD78D6 /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		1739DAB31B8E6E3700CB6413 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		1749C0161B90E1A100E4F31A /* PlaceDefinitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDefinitionViewController.swift; sourceTree = "<group>"; };
-		1749C0181B91AD9200E4F31A /* DefinitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefinitionViewController.swift; sourceTree = "<group>"; };
+		1749C0161B90E1A100E4F31A /* PlacesDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesDetailViewController.swift; sourceTree = "<group>"; };
+		1749C0181B91AD9200E4F31A /* WordsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsDetailViewController.swift; sourceTree = "<group>"; };
 		1749C01A1B91E87D00E4F31A /* CustomViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViews.swift; sourceTree = "<group>"; };
 		1749C01C1B91E8DE00E4F31A /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		175108F31B8E66AB000EB65F /* Cymru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cymru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		175108F61B8E66AB000EB65F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		175108F81B8E66AB000EB65F /* WordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsViewController.swift; sourceTree = "<group>"; };
-		175108FA1B8E66AB000EB65F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		175108FD1B8E66AB000EB65F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		175108FF1B8E66AB000EB65F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		175109021B8E66AB000EB65F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -71,10 +69,9 @@
 			children = (
 				175108F61B8E66AB000EB65F /* AppDelegate.swift */,
 				175108F81B8E66AB000EB65F /* WordsViewController.swift */,
-				1749C0181B91AD9200E4F31A /* DefinitionViewController.swift */,
+				1749C0181B91AD9200E4F31A /* WordsDetailViewController.swift */,
 				173744201B8FA1CC00DD78D6 /* PlacesViewController.swift */,
-				1749C0161B90E1A100E4F31A /* PlaceDefinitionViewController.swift */,
-				175108FA1B8E66AB000EB65F /* MapViewController.swift */,
+				1749C0161B90E1A100E4F31A /* PlacesDetailViewController.swift */,
 				1749C01A1B91E87D00E4F31A /* CustomViews.swift */,
 				1749C01C1B91E8DE00E4F31A /* Models.swift */,
 				175108FC1B8E66AB000EB65F /* Main.storyboard */,
@@ -156,10 +153,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1749C0191B91AD9200E4F31A /* DefinitionViewController.swift in Sources */,
-				175108FB1B8E66AB000EB65F /* MapViewController.swift in Sources */,
+				1749C0191B91AD9200E4F31A /* WordsDetailViewController.swift in Sources */,
 				173744211B8FA1CC00DD78D6 /* PlacesViewController.swift in Sources */,
-				1749C0171B90E1A100E4F31A /* PlaceDefinitionViewController.swift in Sources */,
+				1749C0171B90E1A100E4F31A /* PlacesDetailViewController.swift in Sources */,
 				1749C01B1B91E87D00E4F31A /* CustomViews.swift in Sources */,
 				1749C01D1B91E8DE00E4F31A /* Models.swift in Sources */,
 				175108F71B8E66AB000EB65F /* AppDelegate.swift in Sources */,

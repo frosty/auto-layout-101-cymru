@@ -1,5 +1,5 @@
 //
-//  PlaceDefinitionViewController.swift
+//  PlacesDetailViewController.swift
 //  Cymru
 //
 //  Created by James Frost on 28/08/2015.
@@ -9,15 +9,16 @@
 import UIKit
 import MapKit
 
-class PlaceDefinitionViewController: UIViewController {
-  
-  @IBOutlet weak var imageView: RoundedImageView!
+class PlacesDetailViewController: UIViewController {
+
+  let pinIdentifier = "Pin"
+
+  @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var fullTextLabel: UILabel!
   @IBOutlet weak var button: UIButton!
   @IBOutlet weak var mapView: MKMapView!
   
-  var place: Annotation?
-  var snapshotter: MKMapSnapshotter?
+  var place: Place?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -27,11 +28,8 @@ class PlaceDefinitionViewController: UIViewController {
     options.region = MKCoordinateRegionMakeWithDistance(place!.coordinate, 50_000, 50_000)
     mapView.region = options.region
     mapView.addAnnotation(place!)
+    mapView.userInteractionEnabled = false
     
-    snapshotter = MKMapSnapshotter(options: options)
-    snapshotter!.startWithCompletionHandler { (snapshot, error) -> Void in
-//      self.imageView.image = snapshot!.image
-    }
     if let place = place {
       title = place.title
       fullTextLabel.text = place.fullDescription
@@ -40,11 +38,12 @@ class PlaceDefinitionViewController: UIViewController {
   }
 }
 
-extension PlaceDefinitionViewController: MKMapViewDelegate {
+extension PlacesDetailViewController: MKMapViewDelegate {
   func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-    var view = mapView.dequeueReusableAnnotationViewWithIdentifier("Pin")
+    var view = mapView.dequeueReusableAnnotationViewWithIdentifier(pinIdentifier) as? MKPinAnnotationView
     if view == nil {
-      view = MKPinAnnotationView(annotation: place, reuseIdentifier: "Pin")
+      view = MKPinAnnotationView(annotation: place, reuseIdentifier: pinIdentifier)
+      view?.pinTintColor = welshRedColor
     }
     
     return view

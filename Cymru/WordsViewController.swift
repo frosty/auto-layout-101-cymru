@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  WordsViewController.swift
 //  Cymru
 //
 //  Created by James Frost on 26/08/2015.
@@ -11,7 +11,7 @@ import UIKit
 class WordsViewController: UITableViewController {
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if let destinationVC = segue.destinationViewController as? DefinitionViewController
+    if let destinationVC = segue.destinationViewController as? WordsDetailViewController
       where segue.identifier == "DefineSegue" {
         if let indexPath = tableView.indexPathForSelectedRow {
           let definition = definitionsForSection(indexPath.section)[indexPath.row]

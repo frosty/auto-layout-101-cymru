@@ -1,5 +1,5 @@
 //
-//  DefinitionViewController.swift
+//  WordsDetailViewController.swift
 //  Cymru
 //
 //  Created by James Frost on 29/08/2015.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DefinitionViewController: UIViewController {
+class WordsDetailViewController: UIViewController {
   
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var phraseLabel: UILabel!
@@ -16,14 +16,16 @@ class DefinitionViewController: UIViewController {
   
   @IBOutlet weak var middleConstraint: NSLayoutConstraint!
   
-  var definition: Definition!
+  var definition: Definition? = nil
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    phraseLabel.text = definition.phrase
-    imageView.image = definition.image
-    definitionLabel.text = definition.definition
+    if let definition = definition {
+      phraseLabel.text = definition.phrase
+      imageView.image = definition.image
+      definitionLabel.text = definition.definition
+    }
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -38,10 +40,7 @@ class DefinitionViewController: UIViewController {
       }, completion: nil)
   }
   
-  @IBAction func shareTapped() {
-
-  }
+  @IBAction func shareTapped() {}
   
-  @IBAction func playTapped() {
-  }
+  @IBAction func playTapped() {}
 }

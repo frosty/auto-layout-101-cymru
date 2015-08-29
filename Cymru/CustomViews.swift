@@ -41,15 +41,12 @@ class RoundedImageView: UIImageView {
   }
   
   private func commonInit() {
-    // 1:1 aspect ratio
-    //    widthAnchor.constraintEqualToAnchor(heightAnchor, multiplier: 1).active = true
     clipsToBounds = true
-    //    layer.borderWidth = 2.0
-    layer.borderColor = UIColor(red:0.772, green:0.152, blue:0.153, alpha:1).CGColor
+    layer.borderColor = welshRedColor.CGColor
   }
   
   override func intrinsicContentSize() -> CGSize {
-    return CGSize(width: 40, height: 40)
+    return CGSize(width: 40.0, height: 40.0)
   }
   
   override func layoutSubviews() {

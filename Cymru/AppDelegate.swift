@@ -14,7 +14,7 @@ let welshRedColor = UIColor(red:0.85, green:0.062, blue:0.125, alpha:1)
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
-  
+
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     window!.tintColor = welshRedColor
     

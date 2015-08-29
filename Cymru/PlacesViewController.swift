@@ -8,49 +8,45 @@
 
 import UIKit
 
-let tableView = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("PlacesTableViewController")
-
 class PlacesTableViewCell: UITableViewCell {
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var descriptionLabel: UILabel!
-  @IBOutlet weak var iconView: UIImageView!
+  @IBOutlet weak var photoView: UIImageView!
   
-  var place: Annotation? {
+  var place: Place? {
     didSet {
       if let place = place {
         titleLabel.text = place.title
         descriptionLabel.text = place.summary
-        iconView.image = place.image
+        photoView.image = place.image
       }
     }
   }
-}
-
-class PlacesViewController: UIViewController {
-    
-    @IBOutlet weak var mapContainerView: UIView!
-    @IBOutlet weak var tableContainerView: UIView!
-    
-    @IBAction func switchButtonTapped(sender: AnyObject) {
-        navigationController?.viewControllers = [ tableView ]
-    }
-}
-
-class PlacesTableViewController: UITableViewController {
   
-  let annotations = Annotation.allAnnotations()
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    titleLabel.text = nil
+    descriptionLabel.text = nil
+    photoView.image = nil
+  }
+}
+
+class PlacesViewController: UITableViewController {
+  
+  let places = Place.allPlaces()
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     tableView.estimatedRowHeight = 70
     tableView.rowHeight = UITableViewAutomaticDimension
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if let destinationVC = segue.destinationViewController as? PlaceDefinitionViewController
+    if let destinationVC = segue.destinationViewController as? PlacesDetailViewController
       where segue.identifier == "PlaceDetailSegue" {
-        let annotation = annotations[tableView.indexPathForSelectedRow!.row]
-        destinationVC.place = annotation
+        let place = places[tableView.indexPathForSelectedRow!.row]
+        destinationVC.place = place
     }
   }
   
@@ -59,14 +55,14 @@ class PlacesTableViewController: UITableViewController {
   }
   
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return annotations.count
+    return places.count
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("PlaceCell", forIndexPath: indexPath) as! PlacesTableViewCell
     
-    let annotation = annotations[indexPath.row]
-    cell.place = annotation
+    let place = places[indexPath.row]
+    cell.place = place
     
     return cell
   }
