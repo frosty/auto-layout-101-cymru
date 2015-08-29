@@ -1,0 +1,21 @@
+### https://raw.github.com/github/gitignore/098aee26a1c69b0bf9e5723ee6db9589d21e74b0/Objective-C.gitignore
+
+# Xcode
+.DS_Store
+*/build/*
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+profile
+*.moved-aside
+DerivedData
+.idea/
+*.hmap
+
+
