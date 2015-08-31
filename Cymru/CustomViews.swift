@@ -46,7 +46,7 @@ class RoundedImageView: UIImageView {
   }
   
   override func intrinsicContentSize() -> CGSize {
-    return CGSize(width: 40.0, height: 40.0)
+    return CGSize(width: 50.0, height: 50.0)
   }
   
   override func layoutSubviews() {

@@ -36,13 +36,10 @@ class PlacesViewController: UITableViewController {
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("PlaceCell", forIndexPath: indexPath)
+    let cell = tableView.dequeueReusableCellWithIdentifier("PlaceCell", forIndexPath: indexPath) as! PlacesTableViewCell
     
     let place = places[indexPath.row]
-
-    cell.textLabel?.text = place.title
-    cell.detailTextLabel?.text = place.summary
-    cell.imageView?.image = place.image
+    cell.place = place
     
     return cell
   }
