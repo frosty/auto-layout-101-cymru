@@ -21,11 +21,11 @@ class WordsDetailViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-//    if let definition = definition {
-//      phraseLabel.text = definition.phrase
-//      imageView.image = definition.image
-//      definitionLabel.text = definition.definition
-//    }
+    if let definition = definition {
+      phraseLabel.text = definition.phrase
+      imageView.image = definition.image
+      definitionLabel.text = definition.definition
+    }
   }
   
 //  override func viewWillAppear(animated: Bool) {
