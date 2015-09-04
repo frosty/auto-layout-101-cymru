@@ -52,6 +52,6 @@ class RoundedImageView: UIImageView {
   override func layoutSubviews() {
     super.layoutSubviews()
     
-    layer.cornerRadius = CGRectGetWidth(bounds) / 2
+    layer.cornerRadius = min(CGRectGetWidth(bounds), CGRectGetHeight(bounds)) / 2
   }
 }
