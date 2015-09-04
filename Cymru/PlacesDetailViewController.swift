@@ -23,10 +23,7 @@ class PlacesDetailViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let options = MKMapSnapshotOptions()
-    options.mapType = .Standard
-    options.region = MKCoordinateRegionMakeWithDistance(place!.coordinate, 50_000, 50_000)
-    mapView.region = options.region
+    mapView.region = MKCoordinateRegionMakeWithDistance(place!.coordinate, 50_000, 50_000)
     mapView.addAnnotation(place!)
     mapView.userInteractionEnabled = false
     

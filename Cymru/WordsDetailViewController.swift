@@ -16,7 +16,7 @@ class WordsDetailViewController: UIViewController {
   
   @IBOutlet weak var middleConstraint: NSLayoutConstraint!
   
-  var definition: Definition? = nil
+  var definition: Definition?
   
   override func viewDidLoad() {
     super.viewDidLoad()
