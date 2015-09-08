@@ -15,8 +15,8 @@ class PlacesViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-//    tableView.estimatedRowHeight = 70
-//    tableView.rowHeight = UITableViewAutomaticDimension
+    tableView.estimatedRowHeight = 70
+    tableView.rowHeight = UITableViewAutomaticDimension
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
